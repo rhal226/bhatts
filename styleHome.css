@@ -76,3 +76,12 @@ li{
     background-color: #04AA6D;
     color: white;
   }
+
+  .currentNews{
+    color: white;
+    font-size: 30px;
+    font-family:'Trebuchet MS';
+    padding-left: 10px;
+    float: left;
+    padding-top: 10px;
+  }
