@@ -8,7 +8,7 @@
     background-image: linear-gradient(to top, rgba(31, 239, 211, 0.454), rgba(3, 1, 65, 0.836));
     background-position: center;
     background-size: cover;
-    height: 109vh;
+    height: 160vh;
 }
 
 .logout{
@@ -18,21 +18,21 @@
 }
 .logout a{
     color: #f2f2f2;
-    padding: 14px 16px;
+    padding-right: 10px;
     text-decoration: none;
     font-size: 17px;
 }
 
 .icon{
     width: 100%;
-    height: 20px;
+    height: 30px;
     background-color: #333;
 }
 
 .logo{
     color: white;
-    font-size: 50px;
-    font-family:'Trebuchet MS';
+    font-size: 60px;
+    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
     padding-left: 20px;
     float: left;
     padding-top: 10px;
@@ -79,9 +79,66 @@ li{
 
   .currentNews{
     color: white;
-    font-size: 30px;
-    font-family:'Trebuchet MS';
+    font-size: 50px;
+    font-family:  'Lucida Sans', Arial, sans-serif;
+    padding-left: 20px;
+    float: left;
+    padding-top: 20px;
+    padding-bottom: 25px;
+  }
+
+  .image1{
+    padding-left: 20px;
+    padding-bottom: 5px;
+    height: 50px;
+    width: 650px;
+  }
+
+  .image1Caption a{
+    color: #333;
+    font-size: 20px;
+    font-family:  sans-serif;
     padding-left: 10px;
     float: left;
     padding-top: 10px;
+    padding-bottom: 15px;
+    width: 500px;
   }
+
+  .image2 {
+    width: 30px;
+    height: 10px;
+    float: right;
+    padding-left: 10px;
+  }
+
+  .image2Caption a{
+    width: 300px;
+    color: #333;
+    font-size: 10px;
+    float: left;
+    font-family:  sans-serif;
+    padding-left: 5px;
+    padding-top: 10px;
+    padding-bottom: 60px;
+  }
+
+  .image3 {
+    width: 30px;
+    height: 10px;
+    float: right;
+    padding-left: 10px;
+  }
+
+  .image3Caption a{
+    width: 300px;
+    color: #333;
+    font-size: 10px;
+    float: left;
+    font-family:  sans-serif;
+    padding-left: 5px;
+    padding-top: 10px;
+    padding-bottom: 60px;
+  }
+
+  
