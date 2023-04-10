@@ -24,7 +24,7 @@ def searchSymp(symptoms):
     # test = df[df.isin([symptoms[0]]).any(axis=1)]
     # print(test)
 
-    mask = functools.reduce(np.logical_or, [df[f"Symptom_{i}"].str.contains(symptoms[0]) for i in range(1, 18)]).fillna(False)
+    mask = functools.reduce(np.logical_or, [df[f"Symptom_{i}"].str.contains(symptoms[0], case=False) for i in range(1, 18)]).fillna(False)
     result = df[mask]
 
     return result.to_json
