@@ -33,4 +33,13 @@
         </div>
     </div>
 </body>
+<script>
+    function sendUserinfo(){
+        let userinfo=document.getElementById('username').value
+        console.log(userinfo)
+        const request = new XMLHttpRequest()
+        request.open('POST', '/ProcessUserInfo/$(JSON.stringify(userinfo))')
+        request.send();
+    }
+</script>
 </html>
