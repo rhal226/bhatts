@@ -9,12 +9,6 @@
     <title>Passing Variables</title>
 </head>
 <body>
-    <h2>Passing Javascript Variables</h2>
-    <form>
-        <label>Enter a Name</label>
-        <input type='text' name="username" id='username'><br>
-        <button type="button" onclick="sendUserinfo()">Submit</button>"
-    </form>
     <div class="main">
         <div class="logout">
             <ul>
@@ -31,11 +25,23 @@
                 <li><input type="text" placeholder="Search..."></li>
             </ul>
         </div>
+        <div class="search">
+            <br>
+            <form>
+                <label>Search</label>
+                <input type='text' name="request" id='request'>
+                <button type="button" onclick="sendUserinfo()">Submit</button><br>
+                <input type='radio' id='disease' name='requestType' value="searchDisease">
+                <label for="disease">Search Diseases</label>
+                <input type='radio' id='symptom' name='requestType' value="searchSymptom">
+                <label for="symptom">Search Symptom</label>
+            </form>
+        </div>
     </div>
 </body>
 <script>
     function sendUserinfo(){
-        let userinfo=document.getElementById('username').value
+        let userinfo=document.getElementById('request').value
         console.log(userinfo)
         const request = new XMLHttpRequest()
         request.open('POST', '/ProcessUserInfo/$(JSON.stringify(userinfo))')
