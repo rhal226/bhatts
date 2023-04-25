@@ -26,6 +26,19 @@
     padding-top: 10px;
 }
 
+.logout{
+  background-color: #333;
+  width: 100%;
+  height: 20px;
+}
+
+.logout a{
+  color: #f2f2f2;
+  padding-left: 1095px;
+  text-decoration: none;
+  font-size: 17px;
+}
+
 ul{
     list-style-type: none;
     padding-top: 50px;
@@ -87,3 +100,56 @@ li{
       border: 1px solid #ccc;
     }
   }
+
+.search {
+  color: white;
+  font-size: 17px;
+  font-family:'Trebuchet MS';
+  padding-left: 20px;
+  float: left;
+  padding-top: 10px;
+}
+
+.search label {
+  padding-bottom: 50px;
+}
+
+.card {
+  /* Add shadows to create the "card" effect */
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+  transition: 0.3s;
+  padding-top: 10px;
+}
+
+.card2 {
+  /* Add shadows to create the "card" effect */
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+  transition: 0.3s;
+  padding-top: 50px;
+}
+
+.card2:hover {
+  box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+}
+
+.center {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 50%;
+}
+
+.card p{
+  font-size: 12px;
+}
+
+/* On mouse-over, add a deeper shadow */
+.card:hover {
+  box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+}
+
+/* Add some padding inside the card container */
+.container {
+  padding-bottom: 10px;
+  padding-left: 10px;
+}

@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <title>Webpage Design</title>
-    <link rel="stylesheet" href="styleHome.css">
+    <link rel="stylesheet" href="styleSymptom.css">
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -28,7 +28,7 @@
         <div class="search">
             <br>
             <form>
-                <label>Search</label>
+                <label>Search Symptoms</label>
                 <input type='text' name="request" id='request'>
                 <button type="button" onclick="sendUserinfo()">Submit</button><br>
                 <input type='radio' id='disease' name='requestType' value="searchDisease">
@@ -36,6 +36,20 @@
                 <input type='radio' id='symptom' name='requestType' value="searchSymptom">
                 <label for="symptom">Search Symptom</label>
             </form>
+            <div class="card">
+                <img src="head.png" alt="Avatar" style="width:200px" class="center">
+                <div class="container">
+                  <h4><b>Head</b></h4>
+                  <p>Select symptoms from this part of the body </p>
+                </div>
+            </div>
+            <div class="card2">
+                <img src="arms.webp" alt="Avatar" style="width:100px" class="center">
+                <div class="container">
+                    <h4><b>Arms & Hands</b></h4>
+                    <p>Select symptoms from this part of the body </p>
+                </div>
+            </div>
         </div>
     </div>
 </body>
