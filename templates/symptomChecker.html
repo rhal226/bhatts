@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <title>Webpage Design</title>
-    <link rel="stylesheet" href="styleHome.css">
+    <link rel="stylesheet" href="../static/styles/styleHome.css">
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -12,7 +12,7 @@
     <div class="main">
         <div class="logout">
             <ul>
-                <li><a href="login.html">Logout</a></li>
+                <li><a href="/login">Logout</a></li>
             </ul>
         </div>
         <div class="icon">
@@ -20,8 +20,8 @@
         </div>
         <div class="topnav">
             <ul>
-                <li><a href="home.html">Home</a></li>
-                <li><a href="symptomChecker.html">Symptom Checker</a></li>
+                <li><a href="/">Home</a></li>
+                <li><a href="/sympCheck">Symptom Checker</a></li>
                 <li><input type="text" placeholder="Search..."></li>
             </ul>
         </div>
@@ -30,8 +30,8 @@
             <form>
                 <label>Search</label>
                 <input type='text' name="request" id='request'>
-                <button type="button" onclick="sendUserinfo()">Submit</button><br>
-                <input type='radio' id='disease' name='requestType' value="searchDisease">
+                <button type="button" onclick="sendUserInfo()"> Submit</button><br>
+                <input type='radio' id='disease' name='requestType' value="searchDisease" checked>
                 <label for="disease">Search Diseases</label>
                 <input type='radio' id='symptom' name='requestType' value="searchSymptom">
                 <label for="symptom">Search Symptom</label>
@@ -40,12 +40,23 @@
     </div>
 </body>
 <script>
-    function sendUserinfo(){
-        let userinfo=document.getElementById('request').value
-        console.log(userinfo)
+    function sendUserInfo(){
+        let arg=document.getElementById('request').value
+        let dos =document.querySelector('input[name="requestType"]:checked').value;
+
+        console.log(arg)
         const request = new XMLHttpRequest()
-        request.open('POST', '/ProcessUserInfo/$(JSON.stringify(userinfo))')
+        request.open('GET', `/searchDB${JSON.stringify([arg, dos])}`)
         request.send();
+
+        fetch(`/searchDB${JSON.stringify([arg, dos])}`)
+         .then(function (response) {
+          return response.json();
+        }).then(function (text) {
+          console.log('GET response:');
+          console.log(text);
+        });
     }
+
 </script>
 </html>
