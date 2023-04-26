@@ -10,11 +10,6 @@
 </head>
 <body>
     <div class="main">
-        <div class="logout">
-            <ul>
-                <li><a href="/login">Logout</a></li>
-            </ul>
-        </div>
         <div class="icon">
             <h2 class="logo">MedMobile</h2>
         </div>
@@ -22,7 +17,8 @@
             <ul>
                 <li><a href="/">Home</a></li>
                 <li><a href="/sympCheck">Symptom Checker</a></li>
-                <li><input type="text" placeholder="Search..."></li>
+                <li><a href="/contact">Contact Us</a></li>
+                <li><a href="/login">Logout</a></li>
             </ul>
         </div>
         <div class="search">
@@ -36,18 +32,25 @@
                 <input type='radio' id='symptom' name='requestType' value="searchSymptom">
                 <label for="symptom">Search Symptom</label>
             </form>
-            <div class="card">
-                <img src="/static/head.png" alt="Avatar" style="width:200px" class="center">
-                <div class="container">
-                  <h4><b>Head</b></h4>
-                  <p>Select symptoms from this part of the body </p>
+            </br>
+            <div class="row">
+                <div class="column">
+                    <div class="card">
+                        <img src="/static/head.png" alt="Avatar" style="width:200px" class="center">
+                        <div class="container">
+                            <h4><b>Head</b></h4>
+                            <p>Select symptoms from this part of the body </p>
+                        </div>
+                    </div>
                 </div>
-            </div>
-            <div class="card">
-                <img src="/static/arms.webp" alt="Avatar" style="width:100px" class="center">
-                <div class="container">
-                    <h4><b>Arms & Hands</b></h4>
-                    <p>Select symptoms from this part of the body </p>
+                <div class="column">
+                    <div class="card">
+                        <img src="/static/arms.webp" alt="Avatar" style="width:120px" class="center">
+                        <div class="container">
+                            <h4><b>Arms & Hands</b></h4>
+                            <p>Select symptoms from this part of the body </p>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>

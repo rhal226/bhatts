@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Webpage Design</title>
+    <link rel="stylesheet" href="../static/styles/contact.css">
+</head>
+<body>
+    <div class="main">
+        <div class="icon">
+            <h2 class="logo">MedMobile</h2>
+        </div>
+        <div class="topnav">
+            <ul>
+                <li><a href="/">Home</a></li>
+                <li><a href="/sympCheck">Symptom Checker</a></li>
+                <li><a href="/contact">Contact Us</a></li>
+                <li><a href="/login">Logout</a></li>
+            </ul>
+        </div>
+        <div class="container">
+            <form action="action_page.php">
+        
+            <label for="fname">First Name</label>
+            <input type="text" id="fname" name="firstname" placeholder="Your name..">
+        
+            <label for="lname">Last Name</label>
+            <input type="text" id="lname" name="lastname" placeholder="Your last name..">
+        
+            <label for="country">Country</label>
+            <select id="country" name="country">
+                <option value="australia">Australia</option>
+                <option value="canada">Canada</option>
+                <option value="usa">USA</option>
+            </select>
+        
+            <label for="subject">Subject</label>
+            <textarea id="subject" name="subject" placeholder="Write something.." style="height:200px"></textarea>
+        
+            <input type="submit" value="Submit">
+        
+            </form>
+        </div>
+    </div>
+</body>
+</html>

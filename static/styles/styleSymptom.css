@@ -13,7 +13,7 @@
 
 .icon{
     width: 100%;
-    height: 20px;
+    height: 30px;
     background-color: #333;
 }
 
@@ -107,29 +107,19 @@ li{
   padding-bottom: 50px;
 }
 
-.card {
-  /* Add shadows to create the "card" effect */
-  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
-  transition: 0.3s;
-  padding-top: 10px;
-}
-
-.card2 {
-  /* Add shadows to create the "card" effect */
-  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
-  transition: 0.3s;
-  padding-top: 50px;
-}
-
-.card2:hover {
-  box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
-}
-
 .center {
   display: block;
   margin-left: auto;
   margin-right: auto;
   width: 50%;
+}
+
+.card {
+  border: 1px solid #dadada;
+  box-shadow: 4px 4px 8px 0 rgba(0, 0, 0, 0.2);
+  transition: 0.2s;
+  width: 50%;
+  padding-top: 50px;
 }
 
 .card p{
@@ -138,11 +128,27 @@ li{
 
 /* On mouse-over, add a deeper shadow */
 .card:hover {
-  box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+  box-shadow: 8px 8px 16px 0 rgba(0, 0, 0, 0.2);
 }
 
 /* Add some padding inside the card container */
-.container {
+.card .container {
   padding-bottom: 10px;
   padding-left: 10px;
 }
+
+.column {
+  float: left;
+  width: 33.33%;
+}
+
+/* Clear floats after the columns */
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+
+
+
