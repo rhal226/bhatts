@@ -167,5 +167,17 @@ padding-left: 10px;
   }
 }
 
+.containerTab {
+  padding: 20px;
+  color: white;
+}
+
+.closebtn {
+  float: right;
+  color: white;
+  font-size: 35px;
+  cursor: pointer;
+}
+
 
 
