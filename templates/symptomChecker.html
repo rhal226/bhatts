@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Webpage Design</title>
+    <link rel="stylesheet" href="../static/styles/styleSymptom.css">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Passing Variables</title>
+</head>
+<body>
+    <div class="main">
+        <div class="logout">
+            <ul>
+                <li><a href="/login">Logout</a></li>
+            </ul>
+        </div>
+        <div class="icon">
+            <h2 class="logo">MedMobile</h2>
+        </div>
+        <div class="topnav">
+            <ul>
+                <li><a href="/">Home</a></li>
+                <li><a href="/sympCheck">Symptom Checker</a></li>
+                <li><input type="text" placeholder="Search..."></li>
+            </ul>
+        </div>
+        <div class="search">
+            <br>
+            <form>
+                <label>Search Symptoms</label>
+                <input type='text' name="request" id='request'>
+                <button type="button" onclick="sendUserInfo()"> Submit</button><br>
+                <input type='radio' id='disease' name='requestType' value="searchDisease" checked>
+                <label for="disease">Search Diseases</label>
+                <input type='radio' id='symptom' name='requestType' value="searchSymptom">
+                <label for="symptom">Search Symptom</label>
+            </form>
+        </div>
+         <div class="card">
+                <img src="/static/head.png" alt="Avatar" style="width:200px" class="center">
+                <div class="container">
+                  <h4><b>Head</b></h4>
+                  <p>Select symptoms from this part of the body </p>
+                </div>
+            </div>
+        <div class="card2">
+            <img src="/static/arms.webp" alt="Avatar" style="width:100px" class="center">
+            <div class="container">
+                <h4><b>Arms & Hands</b></h4>
+                <p>Select symptoms from this part of the body </p>
+            </div>
+        </div>
+    </div>
+</body>
+<script>
+    function sendUserInfo(){
+        let arg=document.getElementById('request').value
+        let dos =document.querySelector('input[name="requestType"]:checked').value;
+
+        console.log(arg)
+        const request = new XMLHttpRequest()
+        request.open('GET', `/searchDB${JSON.stringify([arg, dos])}`)
+        request.send();
+
+        fetch(`/searchDB${JSON.stringify([arg, dos])}`)
+         .then(function (response) {
+          return response.json();
+        }).then(function (text) {
+          console.log('GET response:');
+          console.log(text);
+        });
+    }
+
+</script>
+</html>
