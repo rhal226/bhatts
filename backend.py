@@ -10,7 +10,6 @@ Usage:
 
 '''
 
-
 from flask import Flask, request, render_template, jsonify
 import functools
 import pandas as pd
@@ -18,6 +17,8 @@ import numpy as np
 import json
 
 app = Flask(__name__, template_folder="templates", static_folder="static", )
+
+
 #
 # def fixOrder():
 #     df = pd.read_csv("../data/disease_precautions.csv")
@@ -50,6 +51,15 @@ app = Flask(__name__, template_folder="templates", static_folder="static", )
 #
 #     return result.to_json
 
+@app.route("/user")
+def user():
+    return render_template('user.html')
+
+
+@app.route("/new")
+def newUser():
+    return render_template('new.html')
+
 
 @app.route("/")
 def home():
@@ -76,7 +86,8 @@ def searchDB(args):
     mask = None
 
     if arg[1] == "searchSymptom":
-        mask = functools.reduce(np.logical_or, [sympDF[f"Symptom_{i}"].str.contains(arg[0], case=False) for i in
+        searches = arg[0].split(", ")
+        mask = functools.reduce(np.logical_or, [sympDF[f"Symptom_{i}"].str.contains('|'.join(searches), case=False) for i in
                                                 range(1, 18)]).fillna(False)
     elif arg[1] == "searchDisease":
         mask = functools.reduce(np.logical_or, [descDF["Disease"].str.contains(arg[0], case=False)])
@@ -85,6 +96,7 @@ def searchDB(args):
     sympDF = sympDF[mask].dropna(axis=1)
     precDF = precDF[mask].dropna(axis=1)
 
+    # print(descDF)
 
     return jsonify([descDF.to_json(), sympDF.to_json(), precDF.to_json()])
 
