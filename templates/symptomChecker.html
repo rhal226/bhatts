@@ -7,6 +7,16 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Passing Variables</title>
+    <style>
+        ul{
+            list-style-type: none;
+            padding-top: 5px;
+            padding-bottom: 10px;
+        }
+        li{
+            padding-left: 10px;
+        }
+    </style>
 </head>
 <body>
     <div class="main">
@@ -32,6 +42,10 @@
                 <input type='radio' id='symptom' name='requestType' value="searchSymptom">
                 <label for="symptom">Search Symptom</label>
             </form>
+            </br>
+            <div id="query_body">
+                
+            </div>
             </br>
             <div class="row">
                 <div class="column" onclick="openTab('b1');">
@@ -159,8 +173,72 @@
         }).then(function (text) {
           console.log('GET response:');
           console.log(text);
+          createList(text);
         });
     }
+    function createList(text) {
+        var arraySize = text.length;
+        
+        const mainUL = document.createElement('ol');
+        for (var i = 0; i < arraySize; i++) {
+            const diseaseLI = document.createElement('ol');
+            diseaseLI.innerHTML = "Result " + (i+1) + ":";
+            // console.log(text[i]);
+            var json = JSON.parse(text[i]);
+            
+            // create list for diseases
+            const diseaseUL = document.createElement('ul');
+            if(i == 0){
+                for (var key in json.Disease) {
+                    const DiseasesLI = document.createElement('li');
+                    console.log(key + ':' +json.Disease[key]);
+                    DiseasesLI.innerHTML = key + ': ' + json.Disease[key] + " - " + json.Description[key] + "</br>";
+                    diseaseUL.appendChild(DiseasesLI);
+                }
+            }
+            else if(i == 1){
+                for (var key in json.Symptom_1) {
+                    const DiseasesLI = document.createElement('li');
+                    console.log(key + ':' +json.Symptom_1[key]);
+                    DiseasesLI.innerHTML = key + ': ' + json.Symptom_1[key] + "</br>";
+                    diseaseUL.appendChild(DiseasesLI);
+                }
+            }
+            else{
+                for (var key in json.Precaution_1) {
+                    const DiseasesLI = document.createElement('li');
+                    console.log(key + ':' +json.Precaution_1[key]);
+                    DiseasesLI.innerHTML = key + ': ' + json.Precaution_1[key] + "</br>";
+                    diseaseUL.appendChild(DiseasesLI);
+                }
+            }
+            
+ 
+
+            // append diseasesLI list to diseaseLI
+            diseaseLI.appendChild(diseaseUL);
+            // append disease list to mainUL
+            mainUL.appendChild(diseaseLI);
+        }
+        // append mainUL to body
+        document.getElementById("query_body").appendChild(mainUL);
+    }   
+    function example(text){
+        var json = {
+            "Disease": {
+                "6": "Bronchial Asthma",
+                "10": "Common Cold",
+                "16": "GERD",
+                "34": "Pneumonia",
+                "36": "Tuberculosis"
+            }
+        };
+        console.log(json);
+            for (var key in json.Disease) {
+                console.log(json.Disease[key]);
+            }
+    }
+
     function openTab(tabName) {
           var i, x;
           x = document.getElementsByClassName("containerTab");
@@ -169,6 +247,8 @@
           }
           document.getElementById(tabName).style.display = "block";
     }
+
+
 
 </script>
 </html>
